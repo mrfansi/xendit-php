@@ -67,7 +67,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'should_authenticate_credit_card' => 'bool',
         'currency' => 'string',
         'reminder_time' => 'float',
-        'local' => 'string',
+        'locale' => 'string',
         'reminder_time_unit' => 'string',
         'items' => '\Xendit\Invoice\InvoiceItem[]',
         'fees' => '\Xendit\Invoice\InvoiceFee[]',
@@ -98,7 +98,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'should_authenticate_credit_card' => null,
         'currency' => null,
         'reminder_time' => null,
-        'local' => null,
+        'locale' => null,
         'reminder_time_unit' => null,
         'items' => null,
         'fees' => null,
@@ -127,7 +127,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 		'should_authenticate_credit_card' => false,
 		'currency' => false,
 		'reminder_time' => false,
-		'local' => false,
+		'locale' => false,
 		'reminder_time_unit' => false,
 		'items' => false,
 		'fees' => false,
@@ -236,7 +236,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'should_authenticate_credit_card' => 'should_authenticate_credit_card',
         'currency' => 'currency',
         'reminder_time' => 'reminder_time',
-        'local' => 'local',
+        'locale' => 'locale',
         'reminder_time_unit' => 'reminder_time_unit',
         'items' => 'items',
         'fees' => 'fees',
@@ -265,7 +265,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'should_authenticate_credit_card' => 'setShouldAuthenticateCreditCard',
         'currency' => 'setCurrency',
         'reminder_time' => 'setReminderTime',
-        'local' => 'setLocal',
+        'locale' => 'setLocale',
         'reminder_time_unit' => 'setReminderTimeUnit',
         'items' => 'setItems',
         'fees' => 'setFees',
@@ -294,7 +294,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'should_authenticate_credit_card' => 'getShouldAuthenticateCreditCard',
         'currency' => 'getCurrency',
         'reminder_time' => 'getReminderTime',
-        'local' => 'getLocal',
+        'locale' => 'getLocale',
         'reminder_time_unit' => 'getReminderTimeUnit',
         'items' => 'getItems',
         'fees' => 'getFees',
@@ -374,7 +374,7 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('should_authenticate_credit_card', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('reminder_time', $data ?? [], null);
-        $this->setIfExists('local', $data ?? [], null);
+        $this->setIfExists('locale', $data ?? [], null);
         $this->setIfExists('reminder_time_unit', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('fees', $data ?? [], null);
@@ -862,11 +862,11 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets local
+     * Gets locale
      *
      * @return string|null
      */
-    public function getLocal()
+    public function getLocale()
     {
         return $this->container['local'];
     }
@@ -874,16 +874,16 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets local
      *
-     * @param string|null $local The local.
+     * @param string|null $locale The locale.
      *
      * @return self
      */
-    public function setLocal($local)
+    public function setLocale($locale)
     {
-        if (is_null($local)) {
-            throw new \InvalidArgumentException('non-nullable local cannot be null');
+        if (is_null($locale)) {
+            throw new \InvalidArgumentException('non-nullable locale cannot be null');
         }
-        $this->container['local'] = $local;
+        $this->container['locale'] = $locale;
 
         return $this;
     }
