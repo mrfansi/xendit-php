@@ -868,11 +868,11 @@ class CreateInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getLocale()
     {
-        return $this->container['local'];
+        return $this->container['locale'];
     }
 
     /**
-     * Sets local
+     * Sets locale
      *
      * @param string|null $locale The locale.
      *
